@@ -15,7 +15,7 @@ class dbstore {
         return writeFile('db/db.json', JSON.stringify(note))
     }
 
-    // get all notes
+    // view all notes
     getAllNotes() {
         return this.read().then((notes) => {
             let notesResponse;
@@ -28,7 +28,7 @@ class dbstore {
             return notesResponse;
         })
     }
-    // add a note
+    // add note
     addANote(note) {
         let { title, text } = note
 
@@ -37,13 +37,13 @@ class dbstore {
         }
         let addedNote = { title, text, id: uuidv1() }
 
-        // get notes, add new, write updated notes, return the new one
+        // get , new, update notes
         return this.getAllNotes()
             .then((notes) => [...notes, addedNote])
             .then((updated) => this.write(updated))
             .then(() => addedNote)
     } 
-    // delete a note
+    // delete note
     deleteNote(id) {
         return this.getAllNotes()
             .then((notes) => notes.filter((note) => note.id !== id))

@@ -1,0 +1,47 @@
+#aaron-image {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    bottom: 20px;
+    left: 0px 
+    }
+  
+      /* Tooltip text */
+      .aaron .aarontext {
+        visibility: hidden;
+        width: 200px;
+        background-color: blue;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px; 
+       
+        /* Position the tooltip text - see examples below! */
+        position: fixed;
+        bottom: 110px;
+        left: 50px 
+      }
+      
+      .aaron .aarontext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 10%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: blue transparent transparent transparent;
+      }
+
+      /* Show the tooltip text when you mouse over the tooltip container */
+      .aaron:hover .aarontext {
+        visibility: visible;
+      }
+
+    /* HTML FOR AARON
+    <section class="aaron">
+    <img id="aaron-image" src="./assets/images/Aaron.png" alt="Cartoon image of Aaron Raikes">
+    <span class="aarontext">Thanks for checking out my Password Generator. I hope you find it userful.
+    </span>
+    </section>
+    */
